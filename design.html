@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>Lightbox Example</title>
+  <link rel="stylesheet" href="dist/css/lightbox.min.css">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <title>Slide &amp; Push Menus with CSS3 Transitions</title>
+  <meta name="description" content="Some slide and push menu demos using CSS3 transitions.">
+  <link rel="stylesheet" href="Slide-Push-Menus-master/css/font-awesome.min.css">
+  <link rel="stylesheet" href="Slide-Push-Menus-master/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="css/design.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <title>Responsive Tiled Photo Gallery in Pure CSS</title> -->
+  
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      background:#D71111;
+      font: 10px/13px 'Lucida Sans',sans-serif;
+    }
+    .wrap {
+      overflow: hidden;
+      margin: 10px;
+    }
+    .box {
+      float: left;
+      position: relative;
+      width: 20%;
+      padding-bottom: 20%;
+    }
+    .boxInner {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      top: 10px;
+      bottom: 10px;
+      overflow: hidden;
+    }
+    .boxInner img {
+      width: 100%;
+    }
+    .boxInner .titleBox {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      font-size: 16px;
+      margin-bottom: 100%;
+      background: #FFF;
+      color: #000;
+      padding-top: 65%;
+      padding-bottom: 35%;
+      padding-left: 30%;
+      padding-right:30%;
+      line-height: 20px;
+      text-align: center;
+      -webkit-transition: all 0.3s ease-out;
+      -moz-transition: all 0.3s ease-out;
+      -o-transition: all 0.3s ease-out;
+      transition: all 0.3s ease-out;
+    }
+    body.no-touch .boxInner:hover .titleBox, body.touch .boxInner.touchFocus .titleBox {
+      margin-bottom: 0;
+    }
+    @media only screen and (max-width : 480px) {
+      /* Smartphone view: 1 tile */
+      .box {
+        width: 100%;
+        padding-bottom: 100%;
+      }
+    }
+    @media only screen and (max-width : 650px) and (min-width : 481px) {
+      /* Tablet view: 2 tiles */
+      .box {
+        width: 50%;
+        padding-bottom: 50%;
+      }
+    }
+    @media only screen and (max-width : 1050px) and (min-width : 651px) {
+      /* Small desktop / ipad view: 3 tiles */
+      .box {
+        width: 33.3%;
+        padding-bottom: 33.3%;
+      }
+    }
+    @media only screen and (max-width : 1290px) and (min-width : 1051px) {
+      /* Medium desktop: 4 tiles */
+      .box {
+        width: 25%;
+        padding-bottom: 25%;
+      }
+    }
+  </style>
+
+</head>
+
+<script type="text/javascript">
+
+  var indexNum = 0;
+  var picSrc = ['design/D.png','design/D.gif'];
+    var lastImage = $("#D img");
+    $(window).keydown(function(e){
+        if (e.keyCode == 68) { //left arrow key 
+        lastImage.hide();
+        indexNum--;
+            if(indexNum == -1) indexNum = 1;
+          $("#D img").attr('src', picSrc[indexNum]).fadeIn();
+        }
+      })
+
+        var picSrc1 = ['design/E.png', 'design/E.gif'];
+        $(window).keydown(function(e){
+        if (e.keyCode === 69){
+          lastImage.hide();
+          indexNum--;
+            if(indexNum == -1) indexNum= 1;
+            $("#E img").attr('src', picSrc1[indexNum]).fadeIn();
+        }
+      })
+
+        var picSrc2 = ['design/S.png', 'design/S.gif'];
+        $(window).keydown(function(e){
+        if (e.keyCode === 83){
+          lastImage.hide();
+          indexNum--;
+            if(indexNum == -1) indexNum= 1;
+            $("#S img").attr('src', picSrc2[indexNum]).fadeIn();
+        }
+      })
+
+        var picSrc3 = ['design/I.png', 'design/I.gif'];
+        $(window).keydown(function(e){
+        if(e.keyCode === 73){
+          lastImage.hide();
+          indexNum--;
+            if(indexNum== -1) indexNum= 1;
+            $('#I img').attr('src', picSrc3[indexNum]).fadeIn();
+        }
+      })
+
+        var picSrc4 = ['design/G.png', 'design/G_1.gif'];
+        $(window).keydown(function(e){
+        if(e.keyCode === 71){
+          lastImage.hide();
+          indexNum--;
+            if(indexNum== -1) indexNum= 1;
+            $('#G img').attr('src', picSrc4[indexNum]).fadeIn();
+        }
+      })
+
+        var picSrc5 = ['design/N.png', 'design/N.gif'];
+        $(window).keydown(function(e){
+        if(e.keyCode === 78){
+          lastImage.hide();
+          indexNum--;
+            if(indexNum== -1) indexNum= 1;
+            $('#N img').attr('src', picSrc5[indexNum]).fadeIn();
+        }
+      })
+
+</script>
+
+<div id="o-wrapper" class="o-wrapper">
+    </nav>
+  </header><!-- /o-header -->
+      
+      <div class="c-buttons">
+        <button id="c-button--slide-left" class="c-button">MENU</button>
+      </div>
+
+</div><!-- /o-wrapper -->
+
+<nav id="c-menu--slide-left" class="c-menu c-menu--slide-left">
+  <button class="c-menu__close" style="color: white;">X</button>
+  <ul class="c-menu__items">
+    <li class="c-menu__item"><a href="#" class="c-menu__link" style="font-size:16px; padding: 19px 24px;">HOME</a></li>
+    <li class="c-menu__item"><a href="design.html" class="c-menu__link" style="font-size:16px; padding: 19px 24px;">DESIGN</a></li>
+    <li class="c-menu__item"><a href="illustration.html" class="c-menu__link" style="font-size:16px; padding: 19px 24px;">ILLUSTRATION</a></li>
+    <li class="c-menu__item"><a href="web.html" class="c-menu__link" style="font-size:16px; padding: 19px 24px;">WEB</a></li>
+    <li class="c-menu__item"><a href="#" class="c-menu__link" style="font-size:16px; padding: 19px 24px;">ABOUT</a></li>
+  </ul>
+</nav>
+
+<div id="c-mask" class="c-mask"></div>
+<script src="Slide-Push-Menus-master/js/dist/menu.js"></script>
+<script>
+
+  var slideLeft = new Menu({
+    wrapper: '#o-wrapper',
+    type: 'slide-left',
+    menuOpenerClass: '.c-button',
+    maskId: '#c-mask'
+  });
+
+  var slideLeftBtn = document.querySelector('#c-button--slide-left');
+  
+  slideLeftBtn.addEventListener('click', function(e) {
+    e.preventDefault;
+    slideLeft.open();
+  });
+
+</script>
+<script src="Slide-Push-Menus-master/js/dist/githubIcons.js"></script>
+<script src="Slide-Push-Menus-master/js/dist/carbonAd.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-34160351-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<div id="design_title">
+<div id= "D"><img src="design/D.png"></div>
+<div id="E"><img src="design/E.png"></div>
+<div id="S"><img src="design/S.png"></div>
+<div id="I"><img src="design/I.png"></div>
+<div id="G"><img src="design/G.png"></div>
+<div id="N"><img src="design/N.png" ></div>
+
+</div>
+<div id="press"><p style="margin-top: 0px;
+    margin-bottom: 0px;">Press the coresponding letters on your keyboard and make some music</p></div>
+
+<div id="red"><img src="design/wave1.gif"/></div>
+
+<body class="no-touch">
+
+    <div class="wrap">
+    <body class="demo-4">
+    <div class="box">
+      <div class="boxInner">
+        <img class="example-image" id= "plato" src="design/Plato.png" alt=""/>
+        <a class="example-image-link" href="design/Plato.png" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><div class="titleBox">PLATO</div></a>
+      </div>
+    </div>
+    <div class="box">
+      <div class="boxInner">
+        <img class="example-image" src="design/Plato1.png" alt=""/>
+        <a class="example-image-link" href="design/Plato1.png" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><div class="titleBox">PLATO IN USE</div></a>
+      </div>
+    </div>
+    <div class="box">
+      <div class="boxInner">
+        <img class="example-image" src="design/lumoss.png" alt=""/>
+        <a class="example-image-link" href="design/lumoss.png" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><div class="titleBox">LUMOSS LIGHTING</div></a>
+      </div>
+    </div>
+    <!-- </div> -->
+    <div class="box">
+      <div class="boxInner">
+        <img class="example-image" id= "sharethebus"src="design/sharethebus.png" alt=""/>
+        <a class="example-image-link" href="design/sharethebus.png" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><div class="titleBox">SHARETHEBUS FLYER</div></a>
+      </div>
+    </div>
+    <div class="box">
+      <div class="boxInner">
+        <img class="example-image" src="design/villar.png" id="villar" alt=""/>
+        <a class="example-image-link" href="design/villar.png" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><div class="titleBox">VILLAR FOOD GROUPS</div></a>
+      </div>
+    </div>
+    <div class="box">
+      <div class="boxInner">
+        <img class="example-image" src="design/chairPoster.png" alt=""/>
+        <a class="example-image-link" href="design/chairPoster.png" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><div class="titleBox">SIEGE FONDUE POSTER</div></a>
+      </div>
+    </div>
+    <div class="box">
+      <div class="boxInner">
+         <img class="example-image" src="design/siegeFondue.png" alt=""/>
+        <a class="example-image-link" href="design/siegeFondue.png" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><div class="titleBox"><p>SIEGE FONDUE THESIS</div></a>
+      </div>
+    </div>
+    <div class="box">
+      <div class="boxInner">
+        <img class="example-image" src="design/portfolioViewfinder" alt=""/>
+        <a class="example-image-link" href="design/portfolioViewfinder" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><div class="titleBox">VIEWFINDER PORTFOLIO</div></a>
+      </div>
+    </div>
+    <div class="box">
+      <div class="boxInner">
+        <img class="example-image" src="design/Valentine.jpg" id="valentine" alt=""/>
+        <a class="example-image-link" href="design/Valentine.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><div class="titleBox">VALENTINES DAY CARD</div></a>
+      </div>
+    </div>
+    <div class="box">
+      <div class="boxInner">
+        <img class="example-image" src="design/killing.png" alt=""/>
+        <a class="example-image-link" href="design/killing.png" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><div class="titleBox">THE KILLING POSTER</div></a>
+      </div>
+    </div>
+    <div class="box">
+      <div class="boxInner">
+        <img class="example-image" src="design/depatterning_1.png" alt=""/>
+        <a class="example-image-link" href="design/depatterning_1.png" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><div class="titleBox">DEPATTERNING POSTER</div></a>
+      </div>
+    </div>
+  <!-- /#wrap -->
+  
+  <!-- Add some JavaScript to enable toggling the descriptions when an image is tapped on a touchscreen device -->
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      // See if this is a touch device
+      if ('ontouchstart' in window)
+      {
+        // Set the correct body class
+        $('body').removeClass('no-touch').addClass('touch');
+        
+        // Add the touch toggle to show text
+        $('div.boxInner img').click(function(){
+          $(this).closest('.boxInner').toggleClass('touchFocus');
+        });
+      }
+    });
+  </script>
+
+  <script src="dist/js/lightbox-plus-jquery.min.js"></script>
+<div class="wrap">
+</body>
+</html>

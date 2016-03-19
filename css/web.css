@@ -1,0 +1,25 @@
+div #sampleMovie{
+	float:left;
+	position: relative;
+	width: 50%;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+}
+/*
+#title{
+	position: absolute;
+	top:50%;
+	left:25%;
+	width: 100%;
+	
+}
+
+@font-face{
+	font-family: TorontoSubwayBold;
+	src: url(TorontoSubwayBold.otf);
+	font-family: TorontoSubwayRegular;
+	src: url(TorontoSubwayRegular.otf);
+}*/

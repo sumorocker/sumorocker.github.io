@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<title>Slide &amp; Push Menus with CSS3 Transitions</title>
+  <meta name="description" content="Some slide and push menu demos using CSS3 transitions.">
+  <link rel="stylesheet" href="Slide-Push-Menus-master/css/font-awesome.min.css">
+  <link rel="stylesheet" href="Slide-Push-Menus-master/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="css/design.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+	<link rel="stylesheet" type="text/css" href="css/web.css">
+	<style type="text/css">
+
+	#title{
+		width: 100%;
+		margin: 0 auto;
+		top:30%;
+		left:50%;
+		margin-right: -50%;
+		transform: translate(-50%, -30%);
+	}
+
+	h1{
+		text-align: center;
+		color:black;
+		font: 120px/1 "TorontoSubwayRegular";
+		display: block;
+		position: absolute;
+		width: 5%;
+	}
+
+	#fittext1{
+		width: 100%;
+		top:50%;
+		left:50%;
+		transform: translate(-50%);
+	}
+
+	#fittext2{
+		top:0;
+		width: 50%;
+		padding-top: 8%;
+
+	}
+
+	#video_container{
+		position: relative;
+	}
+
+	@font-face{
+	font-family: TorontoSubwayBold;
+	src: url(css/TorontoSubwayBold.otf);
+	font-family: TorontoSubwayRegular;
+	src: url(css/TorontoSubwayRegular.otf);
+	}
+
+	</style>
+</head>
+<body>
+<div id="o-wrapper" class="o-wrapper">
+    </nav>
+  </header><!-- /o-header -->
+      
+      <div class="c-buttons">
+        <button id="c-button--slide-left" class="c-button">MENU</button>
+      </div>
+
+</div><!-- /o-wrapper -->
+
+<nav id="c-menu--slide-left" class="c-menu c-menu--slide-left">
+  <button class="c-menu__close" style="color: white;">X</button>
+  <ul class="c-menu__items">
+    <li class="c-menu__item"><a href="#" class="c-menu__link" style="font-size:16px; padding: 19px 24px;">HOME</a></li>
+    <li class="c-menu__item"><a href="design.html" class="c-menu__link" style="font-size:16px; padding: 19px 24px;">DESIGN</a></li>
+    <li class="c-menu__item"><a href="illustration.html" class="c-menu__link" style="font-size:16px; padding: 19px 24px;">ILLUSTRATION</a></li>
+    <li class="c-menu__item"><a href="web.html" class="c-menu__link" style="font-size:16px; padding: 19px 24px;">WEB</a></li>
+    <li class="c-menu__item"><a href="#" class="c-menu__link" style="font-size:16px; padding: 19px 24px;">ABOUT</a></li>
+  </ul>
+</nav>
+
+<div id="c-mask" class="c-mask"></div>
+<script src="Slide-Push-Menus-master/js/dist/menu.js"></script>
+<script>
+
+  var slideLeft = new Menu({
+    wrapper: '#o-wrapper',
+    type: 'slide-left',
+    menuOpenerClass: '.c-button',
+    maskId: '#c-mask'
+  });
+
+  var slideLeftBtn = document.querySelector('#c-button--slide-left');
+  
+  slideLeftBtn.addEventListener('click', function(e) {
+    e.preventDefault;
+    slideLeft.open();
+  });
+
+</script>
+<script src="Slide-Push-Menus-master/js/dist/githubIcons.js"></script>
+<script src="Slide-Push-Menus-master/js/dist/carbonAd.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-34160351-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+	<div id="video_container">
+		<video id="sampleMovie" autopla y loop>
+			<source src="web/hermit1.mp4" type="video/mp4"/>
+		</video>
+		<video id="sampleMovie" autopla y loop>
+			<source src="web/hermit4.mp4" type="video/mp4"/>
+		</video>
+		<video id="sampleMovie" autopla y loop>
+			<source src="web/hermit5.mp4" type="video/mp4"/>
+		</video>
+		<video id="sampleMovie" autopla y loop>
+			<source src="web/hermit6.mp4" type="video/mp4"/>
+		</video>
+		<div ="title">
+			<h1 id ="fittext1"><a href="http://www.sonofsnow.com"><img id= "fittext2" src="web/web_title.png" /></a></h1>
+
+		</div>
+	</div>
+	<script type="text/javascript">
+
+	$(function(){
+		$('#fittext2').hover(function(){
+			$('#fittext2').attr('src', 'web/web_title.gif');
+		},
+		function(){
+			$('#fittext2').attr('src', 'web/web_title.png')
+		})
+	})
+
+	</script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</body>
+</html>
