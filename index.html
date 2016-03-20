@@ -79,27 +79,70 @@ body{
 	src: url(css/TorontoSubwayRegular.otf);
 	}
 
-h1{
+h1#changerificwordspanid{
 	position:absolute;
+    text-transform: uppercase;
 	top: 35%;
 	left:50%;
+    transform: translate(-8%, -50%);
 }
 
-#main_page img{}
-	</style>
-	<div id="main_page"><a href="design.html"><img src="css/box_background1.png"></a><h1 id='changerificwordspanid'>Allan Macdonald</h1></div>
-	<div class="demo-1 effect">
-            <h2>DESIGN</h2>
-	<img class="top" a href="design.html" src="main_design.png" style="width: 100%;"alt=""/>
-	</div>
-	<div class="demo-1 effect">
-            <a href="design.html"><h2>ILLUSTRATION</h2></a>
-	<img class="top" src="main_illustration.png" style="width: 100%;"alt=""/>
-	</div>
-	<div class="demo-1 effect">
-            <a href="design.html"><h2>WEB</h2></a>
-	<img class="top" src="main_web.png" style="width: 100%;"alt=""/>
-	</div>
+h1#design{
+    font: 54px/1 "TorontoSubwayRegular";
+       -webkit-text-stroke: 0px black;
+   color: white;
+   text-shadow:
+       3px 3px 0 #000,
+       1px 1px 0 #000;
+    position:absolute;
+    top: 35%;
+    left:50%;
+    transform: translate(162%, 90%);
+}
+
+h1#Illustration{
+    font: 54px/1 "TorontoSubwayRegular";
+       -webkit-text-stroke: 0px black;
+   color: white;
+   text-shadow:
+        3px 3px 0 #000,
+       1px 1px 0 #000;
+    position:absolute;
+    top: 35%;
+    left:50%;
+    transform: translate(40.6%, 210%);
+}
+
+h1#web{
+    font: 54px/1 "TorontoSubwayRegular";
+    -webkit-text-stroke: 0px black;
+   color: white;
+   text-shadow:
+       3px 3px 0 #000,
+       1px 1px 0 #000;
+    position:absolute;
+    top: 35%;
+    left:50%;
+    transform: translate(348%, 320%);
+}
+
+a, a:visited, a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover{
+    webkit-text-stroke: 0px white;
+   color: black;
+   text-shadow:
+       1px 1px 0 #FFF;
+}
+</style>
+		<div id="main_page"><a href="design.html"><img src="css/box_background1.png"></a><h1 id='changerificwordspanid'>Allan Macdonald</h1></div>
+                            <h1 id="design"><a href="design.html">DESIGN</a></h1>
+                            <h1 id="Illustration"><a href="Illustration.html">ILLUSTRATION</a></h1>
+                            <h1 id="web"><a href= "web.html">WEB</a></h1>
+         
 
 	<script type="text/javascript">
 			(function(){
