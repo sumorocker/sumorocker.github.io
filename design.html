@@ -214,7 +214,7 @@
 </script>
 
 <div id="design_title">
-<div id= "D"><img src="design/D.png"></div>
+<div id="D"><img src="design/D.png"></div>
 <div id="E"><img src="design/E.png"></div>
 <div id="S"><img src="design/S.png"></div>
 <div id="I"><img src="design/I.png"></div>
@@ -226,6 +226,20 @@
     margin-bottom: 0px;">Press the corresponding letters on your keyboard for a fun surprise</p></div>
 
 <!--<div id="red"><img src="design/wave1.gif"/></div>-->
+
+<script type="text/javascript">
+  
+  $(window).resize(function() {
+  if ($(window).width() < 410) {
+     $( "#press" ).html( "<p style='height: 50px; margin:0; padding:0;'></p>")
+  }else{
+    if ($(window).width() > 410) {
+      $("#press").html("<div id='press'><p style='margin-top:0px; margin-bottom 0px;'>Press the corresponding letters on your keyboard for a fun surprise</p>")
+    }
+}
+});
+
+</script>
 
 <body class="no-touch">
 
