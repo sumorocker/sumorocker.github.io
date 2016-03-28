@@ -1,65 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-	<title>Slide &amp; Push Menus with CSS3 Transitions</title>
+  <title></title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <title>Slide &amp; Push Menus with CSS3 Transitions</title>
   <meta name="description" content="Some slide and push menu demos using CSS3 transitions.">
   <link rel="stylesheet" href="Slide-Push-Menus-master/css/font-awesome.min.css">
   <link rel="stylesheet" href="Slide-Push-Menus-master/css/style.min.css">
   <link rel="stylesheet" type="text/css" href="css/design.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		
-	<link rel="stylesheet" type="text/css" href="css/web.css">
-	<style type="text/css">
-
-	#title{
-		width: 100%;
-		margin: 0 auto;
-		top:30%;
-		left:50%;
-		margin-right: -50%;
-		transform: translate(-50%, -30%);
-	}
-
-	h1{
-		text-align: center;
-		color:black;
-		font: 120px/1 "TorontoSubwayRegular";
-		display: block;
-		position: absolute;
-		width: 5%;
-	}
-
-	#fittext1{
-		width: 100%;
-		top:50%;
-		left:50%;
-		transform: translate(-50%);
-	}
-
-	#fittext2{
-		top:0;
-		width: 50%;
-		padding-top: 8%;
-
-	}
-
-	#video_container{
-		position: relative;
-	}
-
-	@font-face{
-	font-family: TorontoSubwayBold;
-	src: url(css/TorontoSubwayBold.otf);
-	font-family: TorontoSubwayRegular;
-	src: url(css/TorontoSubwayRegular.otf);
-	}
-
-	</style>
+    
+  <link rel="stylesheet" type="text/css" href="css/web.css">
 </head>
 <body>
-<div id="o-wrapper" class="o-wrapper">
+<div id="o-wrapper" class="o-wrapper" style="width:0;">
     </nav>
   </header><!-- /o-header -->
       
@@ -109,37 +65,52 @@
   ga('send', 'pageview');
 </script>
 
-	<div id="video_container">
-		<video id="sampleMovie" autoplay loop>
-			<source src="web/hermit1.mp4" type="video/mp4"/>
-		</video>
-		<video id="sampleMovie" autoplay loop>
-			<source src="web/hermit4.mp4" type="video/mp4"/>
-		</video>
-		<video id="sampleMovie" autoplay loop>
-			<source src="web/hermit5.mp4" type="video/mp4"/>
-		</video>
-		<video id="sampleMovie" autoplay loop>
-			<source src="web/hermit6.mp4" type="video/mp4"/>
-		</video>
-		<div ="title">
-			<h1 id ="fittext1"><a href="http://www.sonofsnow.com"><img id= "fittext2" src="web/web_title.png" /></a></h1>
+<div id="div1"><video id="sampleMovie" style="width:750px" autoplay loop>
+      <source src="web/hermit1.mp4" type="video/mp4"/>
+</div>
+<div id="div2"><video id="sampleMovie" style="width:750px" autoplay loop>
+      <source src="web/hermit4.mp4" type="video/mp4"/>
+</div>
+<div id="div3"><video id="sampleMovie" style="width:750px" autoplay loop>
+      <source src="web/hermit5.mp4" type="video/mp4"/>
+</div>
+<div id="div4"><video id="sampleMovie" style="width:750px" autoplay loop>
+      <source src="web/hermit6.mp4" type="video/mp4"/>
+</div>
 
-		</div>
-	</div>
-	<script type="text/javascript">
+<h1 id ="fittext1"><a href="http://www.sonofsnow.com"><img id= "fittext2" src="web/web_title.png" /></a></h1>
 
-	$(function(){
-		$('#fittext2').hover(function(){
-			$('#fittext2').attr('src', 'web/web_title.gif');
-		},
-		function(){
-			$('#fittext2').attr('src', 'web/web_title.png')
-		})
-	})
+<style type="text/css">
+  html, body { height: 100%; padding: 0; margin: 0; }
+  div { width: 50%; height: 50%; float: left;}
 
-	</script>
+  #fittext1{
+    top:50%;
+    left:50%;
+    transform: translate(-1%, -50%);
+  }
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  #fittext2{
+    top:0;
+    width: 50%;
+    padding-top: 8%;
+
+  }
+</style>
+
+<script type="text/javascript">
+
+  $(function(){
+    $('#fittext2').hover(function(){
+      $('#fittext2').attr('src', 'web/web_title.gif');
+    },
+    function(){
+      $('#fittext2').attr('src', 'web/web_title.png')
+    })
+  })
+
+  </script>
+  
 </body>
+
 </html>
