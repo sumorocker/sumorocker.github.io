@@ -57,7 +57,7 @@ body.lb-disable-scrolling {
 }
 
 .lb-container {
-  padding: 4px;
+  padding: 0px !important; 
 }
 
 .lb-loader {
