@@ -58,29 +58,50 @@
 body{
 	margin: 0;
 	padding: 0;
-	background-color: white;
+	background-color: #fff439;
 }
 
 #main-navigation{
   width: 100%;
   text-align: center;
+  z-index: 200;
 }
 
-#logo img{
-      width: 60%;
+#logo{
+    background-image: url('A-M-black&white2.png');
+    width: 100%;
+    height: 100%; 
+    text-align: center;
+    background-size: 25%;
+    margin-left: 35%;
+    z-index: 198;
+    position: absolute;
+    background-repeat: no-repeat;
+    margin-top: 15%;
+}
+
+#logo:hover{
+      /*background-image: url('A-M-color.png');*/
 }
 
 #text-navigation{
-  padding-left: 27%;
-  font-family: 'TorontoSubwayBold';
-  color:black;
+  padding-left: 34.5%;
+    font-family: 'TorontoSubwayBold';
+    color: black;
+    position: absolute;
+        margin-top: 31.25%;
+    z-index: 199;
+}
+
+#text-navigation a{
+  font-size: 3vw;
 }
 
 #main-navigation li{
   text-align: left;
   list-style: none;
   text-transform: uppercase;
-  font: 36px "TorontoSubwayRegular";
+  font: 48px "TorontoSubwayRegular";
   font-weight: 900;
   /*font: 54px/1 'TorontoSubwayBold';*/
 }
@@ -158,9 +179,7 @@ a, a:visited, a:active {
 
 a:hover{
     webkit-text-stroke: 0px white;
-   color: black;
-   text-shadow:
-       1px 1px 0 #FFF;
+   color: #D71111;
 }
 
 @media screen and (max-width: 1000px) {
@@ -246,16 +265,80 @@ a:hover{
                             <h1 id="Illustration"><a href="illustration.html">ILLUSTRATION</a></h1>
                             <h1 id="web"><a href= "web.html">WEB</a></h1> -->
 
-                            <div id="main-navigation">
-                              <div id="logo">
-                                <img src="A-M-black&white2.png" alt="">
-                              </div>
-                              <div id='text-navigation'>
-                                <li><a href="design.html">Design</a></li>
-                                <li><a href="illustration.html">Illustration</a></li>
-                                <li><a href="web.html">Web</a></li>
-                              </div>
+                            
+                            <div id="base-layer">
+                                <div id="layer-one" class="layer">
+                                      <div id="main-navigation">
+                                        <div id="logo">
+                                      </div>
+                                      <div id='text-navigation'>
+                                        <li><a href="design.html">Design</a></li>
+                                        <li><a href="illustration.html">Illustration</a></li>
+                                        <li><a href="web.html">Web</a></li>
+                                      </div>
+                                    </div>
+                                    <div id="layer-two" class="layer">
+                                    <img src="images/2.png" alt="">
+                                        <div id="layer-three" class="layer">
+                                        <img src="images/3.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+
+<style>
+  .layer {
+    padding: 20px;
+    color: white;
+}
+#base-layer {
+  width: 100%;
+}
+
+#layer-one {
+  width: 100%;
+}
+
+#layer-one img{
+  width: 100%;
+}
+
+#layer-two {
+  margin-top: -70%;
+  width: 105%;
+}
+
+#layer-two img{
+  width: 100%;
+}
+
+#layer-three {
+  margin-top: -70%;
+  width: 100%;
+}
+
+#layer-three img{
+  width: 100%;
+}
+
+</style>
+
+<script>
+  $(document).ready(function () {
+    $('#layer-one').mousemove(function (e) {
+        // parallax(e, this, 1);
+        parallax(e, document.getElementById('layer-two'), 2);
+        parallax(e, document.getElementById('layer-three'), 3);
+    });
+});
+
+function parallax(e, target, layer) {
+    var layer_coeff = 10 / layer;
+    var x = ($(window).width() - target.offsetWidth) / 2 - (e.pageX - ($(window).width() / 2)) / layer_coeff;
+    var y = ($(window).height() - target.offsetHeight) / 2 - (e.pageY - ($(window).height() / 2)) / layer_coeff;
+    $(target).offset({ top: y ,left : x });
+};
+</script>
          
 
 	<script type="text/javascript">
