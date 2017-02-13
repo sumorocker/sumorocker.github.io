@@ -25,6 +25,15 @@
       overflow: hidden;
       margin: 10px;
     }
+    
+    #example-d3-flyers{
+      margin-top: 15%;
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 20px;
+      font-family: "TorontoSubwayRegular";
+    }
+
     .box {
       float: left;
       position: relative;
@@ -42,6 +51,13 @@
     .boxInner img {
       width: 100%;
     }
+
+    .c-menu__link{
+      font-family: "TorontoSubwayRegular";
+      font-weight: 900;
+      font-size: 2.5em;
+    }
+
     .boxInner .titleBox {
       position: absolute;
       bottom: 0;
@@ -53,8 +69,8 @@
       color: #000;
       padding-top: 50%;
       padding-bottom: 50%;
-      padding-left: 30%;
-      padding-right:30%;
+      padding-left: 20%;
+      padding-right:20%;
       line-height: 20px;
       text-align: center;
       -webkit-transition: all 0.3s ease-out;
@@ -62,6 +78,7 @@
       -o-transition: all 0.3s ease-out;
       transition: all 0.3s ease-out;
     }
+
     body.no-touch .boxInner:hover .titleBox, body.touch .boxInner.touchFocus .titleBox {
       margin-bottom: 0;
     }
@@ -176,10 +193,10 @@
 <nav id="c-menu--slide-left" class="c-menu c-menu--slide-left">
   <button class="c-menu__close" style="color: white;">X</button>
   <ul class="c-menu__items">
-    <li class="c-menu__item"><a href="index.html" class="c-menu__link" style="font-size:16px; padding: 19px 24px;">HOME</a></li>
-    <li class="c-menu__item"><a href="design.html" class="c-menu__link" style="font-size:16px; padding: 19px 24px;">DESIGN</a></li>
-    <li class="c-menu__item"><a href="illustration.html" class="c-menu__link" style="font-size:16px; padding: 19px 24px;">ILLUSTRATION</a></li>
-    <li class="c-menu__item"><a href="web.html" class="c-menu__link" style="font-size:16px; padding: 19px 24px;">WEB</a></li>
+    <li class="c-menu__item"><a href="index.html" class="c-menu__link" style="padding: 25px 24px;">HOME</a></li>
+    <li class="c-menu__item"><a href="design.html" class="c-menu__link" style="padding: 25px 24px;">DESIGN</a></li>
+    <li class="c-menu__item"><a href="illustration.html" class="c-menu__link" style="padding: 25px 24px;">ILLUSTRATION</a></li>
+    <li class="c-menu__item"><a href="web.html" class="c-menu__link" style="padding: 25px 24px;">WEB</a></li>
   </ul>
 </nav>
 
@@ -227,13 +244,12 @@
 <!--<div id="red"><img src="design/wave1.gif"/></div>-->
 
 <script type="text/javascript">
-  
+  var menuContent = "menu"
   $(window).resize(function() {
-  if ($(window).width() < 700) {
-     $( "#press" ).html( "<p style='height: 50px; margin:0; padding:0;'></p>")
-  }else{
-    if ($(window).width() > 410) {
-      $("#press").html("<div id='press'><p style='margin-top:0px; margin-bottom 0px;'>Press the corresponding letters on your keyboard for a fun surprise</p>")
+  if ($(window).width() < 480) {
+     $( "#c-button--slide-left" ).innerHTML = "<div class='burger-menu'></div>";
+  }else if ($(window).width() > 480) {
+      $("#c-button--slide-left").innerHTML = menuContent;
     }
 }
 });
@@ -247,73 +263,73 @@
     <div class="box">
       <div class="boxInner">
         <img class="example-image" src="design/potluck-1.png" alt=""/>
-        <a class="example-image-link" href="design/web-banners.png" data-lightbox="example-set"><div class="titleBox"style="padding-top:60%;padding-bottom:40%;">PLATO IN USE</div></a>
+        <a class="example-image-link" href="design/web-banners.png" data-lightbox="example-set"><div class="titleBox" id="example-fonts" style="padding-top:60%;padding-bottom:40%;">Community Events</div></a>
       </div>
     </div>
     <div class="box">
       <div class="boxInner">
         <img class="example-image" src="design/3-days-left.gif" alt=""/>
-        <a class="example-image-link" href="design/count-down.png" data-lightbox="example-set"><div class="titleBox"style="padding-top:60%;padding-bottom:40%;">LUMOSS LIGHTING</div></a>
+        <a class="example-image-link" href="design/count-down.png" data-lightbox="example-set"><div class="titleBox" id="example-fonts">Countdown</div></a>
       </div>
     </div>
     <div class="box">
       <div class="boxInner">
         <img class="example-image" src="design/d3-flyer-example.png" alt=""/>
-        <a class="example-image-link" href="design/d3-flyers.png" data-lightbox="example-set"><div class="titleBox">DEPATTERNING POSTER</div></a>
+        <a class="example-image-link" href="design/d3-flyers.png" data-lightbox="example-set"><div class="titleBox" id="example-d3-flyers">District 3 Flyers</div></a>
       </div>
     </div>
     <div class="box">
       <div class="boxInner">
         <img class="example-image" src="design/good-things-poster-example.png" alt=""/>
-        <a class="example-image-link" href="design/good-things-poster" data-lightbox="example-set"><div class="titleBox">CIVIS LOGO</div></a>
+        <a class="example-image-link" href="design/good-things-poster" data-lightbox="example-set"><div class="titleBox" id="example-fonts">D3 poster</div></a>
       </div>
     </div>
     <div class="box">
       <div class="boxInner">
         <img class="example-image" id= "sharethebus"src="design/sharethebus-examples.png" alt=""/>
-        <a class="example-image-link" href="design/sharethebus.png" data-lightbox="example-set"><div class="titleBox" style="padding-top:60%;padding-bottom:40%;">SHARETHEBUS FLYER</div></a>
+        <a class="example-image-link" href="design/sharethebus.png" data-lightbox="example-set"><div class="titleBox" style="padding-top:60%;padding-bottom:40%;" id="example-fonts">SHARETHEBUS FLYER</div></a>
       </div>
     </div>
     <div class="box">
       <div class="boxInner">
         <img class="example-image" src="design/menu-plank-2-example.png" alt=""/>
-        <a class="example-image-link" href="design/menu-plank-2.jpg" data-lightbox="example-set"><div class="titleBox">DEPATTERNING POSTER</div></a>
+        <a class="example-image-link" href="design/menu-plank-2.jpg" data-lightbox="example-set"><div class="titleBox" id="example-fonts">La Plank Branding</div></a>
       </div>
     </div>
     <div class="box">
       <div class="boxInner">
         <img class="example-image" src="design/empanadas-example.png" id="villar" alt=""/>
-        <a class="example-image-link" href="design/villar.png" data-lightbox="example-set"><div class="titleBox" style="padding-top:60%;padding-bottom:40%;">VILLAR FOOD GROUPS</div></a>
+        <a class="example-image-link" href="design/villar.png" data-lightbox="example-set"><div class="titleBox" style="padding-top:60%;padding-bottom:40%;" id="example-fonts">Depatterning Poster</div></a>
       </div>
     </div>
     <div class="box">
       <div class="boxInner">
-        <img class="example-image" src="design/valentines-example.png" id="valentine" alt=""/>
-        <a class="example-image-link" href="design/Valentine.jpg" data-lightbox="example-set"><div class="titleBox">VALENTINES DAY CARD</div></a>
+        <img class="example-image" src="design/depatterning-example.png" id="valentine" alt=""/>
+        <a class="example-image-link" href="design/depatterning.png" data-lightbox="example-set"><div class="titleBox" id="example-fonts">VALENTINES DAY CARD</div></a>
       </div>
     </div>
     <div class="box">
       <div class="boxInner">
          <img class="example-image" src="design/siege-fondue-example.png" alt=""/>
-        <a class="example-image-link" href="design/siegeFondue.png" data-lightbox="example-set"><div class="titleBox" style="padding-top:60%;padding-bottom:40%;"><p>SIEGE FONDUE 2</div></a>
+        <a class="example-image-link" href="design/siegeFondue.png" data-lightbox="example-set"><div class="titleBox" style="padding-top:60%;padding-bottom:40%;" id="example-fonts"><p>SIEGE FONDUE 2</div></a>
       </div>
     </div>
     <div class="box">
       <div class="boxInner">
         <img class="example-image" src="design/portfolioViewfinder-example.png" alt=""/>
-        <a class="example-image-link" href="design/portfolioViewfinder" data-lightbox="example-set"><div class="titleBox">VIEWFINDER PORTFOLIO</div></a>
+        <a class="example-image-link" href="design/portfolioViewfinder" data-lightbox="example-set"><div class="titleBox" id="example-fonts">VIEWFINDER PORTFOLIO</div></a>
       </div>
     </div>
     <div class="box">
       <div class="boxInner">
         <img class="example-image" src="design/civis-1.png" alt=""/>
-        <a class="example-image-link" href="design/Civis-Logo-Tests-2.png" data-lightbox="example-set"><div class="titleBox">CIVIS LOGO</div></a>
+        <a class="example-image-link" href="design/Civis-Logo-Tests-2.png" data-lightbox="example-set"><div class="titleBox" id="example-fonts">CIVIS LOGO</div></a>
       </div>
     </div>
     <div class="box">
       <div class="boxInner">
         <img class="example-image" src="design/plato-poster.png" alt=""/>
-        <a class="example-image-link" href="design/Plato1.png" data-lightbox="example-set"><div class="titleBox">DEPATTERNING POSTER</div></a>
+        <a class="example-image-link" href="design/Plato1.png" data-lightbox="example-set"><div class="titleBox" id="example-fonts">Plato Poster</div></a>
       </div>
     </div>
   <!-- /#wrap -->
